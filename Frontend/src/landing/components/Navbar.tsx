@@ -1,3 +1,4 @@
+import { CustomConnectButton } from '../../components/CustomConnectButton';
 import './landing.css'
 const Navbar = () => {
 
@@ -14,7 +15,7 @@ const Navbar = () => {
                     
 
                     <button className="register text-white py-2 px-8 col-span-1 text-base " >Connect Wallet</button>
-
+                    <CustomConnectButton/>
                 </div>
 
             </header>

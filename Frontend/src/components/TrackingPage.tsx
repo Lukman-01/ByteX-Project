@@ -46,7 +46,7 @@ export default function TrackingPage() {
   ];
 
   return (
-    <div className="flex min-h-screen w-full bg-muted/40">
+    <div className="flex min-h-screen dark:text-black w-full bg-muted/40">
       <Sidebar />
       <div className="flex flex-col sm:gap-x-9 sm:py-4 sm:pl-14">
         <Navbar />
@@ -62,10 +62,10 @@ export default function TrackingPage() {
           </section>
           <section className="mb-8 flex justify-end">
             <Button
-              className="relative  px-6 py-3 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 transition-transform transform hover:scale-105"
+              className="relative  px-6 py-3 bg-[#a405cc] text-white font-semibold rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 transition-transform transform hover:scale-105"
               onClick={() => setShowModal(true)}
             >
-              <span className="absolute inset-0 bg-red-600 opacity-0 transition-opacity duration-300 rounded-lg hover:opacity-10"></span>
+              <span className="absolute inset-0  opacity-0 transition-opacity duration-300 rounded-lg hover:opacity-10"></span>
               Add New Product
             </Button>
           </section>
@@ -74,7 +74,7 @@ export default function TrackingPage() {
               {data.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 transition transform hover:-translate-y-1 hover:shadow-xl"
+                  className="bg-white dark:bg-gray-900 dark:shadow-xl shadow-lg rounded-lg p-6 transition transform hover:-translate-y-1 hover:shadow-xl"
                 >
                   <div className="flex justify-between items-center space-x-6">
                     <div className="space-y-1">

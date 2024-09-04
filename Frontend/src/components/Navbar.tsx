@@ -11,6 +11,7 @@ import {
 } from "./ui/breadcrumb";
 import { Sheet, SheetTrigger, SheetContent } from "./ui/sheet";
 import { Sun, Moon } from "lucide-react";
+import { CustomConnectButton } from "./CustomConnectButton";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("light");
@@ -43,7 +44,7 @@ const Navbar = () => {
               <a
                 href="#"
                 className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
-                prefetch={false}
+                
               >
                 <Package2Icon className="h-5 w-5 transition-all group-hover:scale-110" />
                 <div className="lg:col-span-3">
@@ -93,7 +94,7 @@ const Navbar = () => {
             {theme === "light" ? <Moon /> : <Sun />}
           </span>
           <div className="">
-            <ConnectButton />
+            <CustomConnectButton />
           </div>
         </div>
       </header>

@@ -11,6 +11,11 @@ import { useState } from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
+import { useWriteContract } from "wagmi";
+import abi from "../constants/SupplyChain.json";
+import { contractAddress } from "../constants/contractAddress";
+
+// addProduct
 
 function Modal({ showModal, setShowModal, addProduct }: any) {
   const [newProduct, setNewProduct] = useState({
@@ -20,8 +25,37 @@ function Modal({ showModal, setShowModal, addProduct }: any) {
     serialNumber: "",
   });
 
+  const { writeContract, data } = useWriteContract();
+
   const handleInputChange = (e: any) => {
     setNewProduct({ ...newProduct, [e.target.name]: e.target.value });
+  };
+
+  const handleCreateProduct = (e: any) => {
+    e.preventDefault();
+    console.log(abi.abi);
+    writeContract(
+      {
+        abi: abi.abi,
+        address: contractAddress,
+        functionName: "addProduct",
+        args: [
+          "Test Product",
+          "0xA0",
+          "0x2224D97f78C719a83B08c3bdE14D7a8Fa8Ed3CF3",
+          "0x2224D97f78C719a83B08c3bdE14D7a8Fa8Ed3CF3",
+          0,
+          "lagos",
+        ],
+      },
+      {
+        onError: (e) => {
+          console.log(e);
+        },
+      }
+    );
+
+    console.log(data);
   };
 
   return (
@@ -36,8 +70,7 @@ function Modal({ showModal, setShowModal, addProduct }: any) {
           </DialogHeader>
           <form
             onSubmit={(e) => {
-              e.preventDefault();
-              addProduct();
+              handleCreateProduct(e);
             }}
           >
             <div className="grid gap-4 space-y-5">

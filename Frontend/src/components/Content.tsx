@@ -82,7 +82,7 @@ export default function DashboardContent() {
                 </CardDescription>
               </CardHeader>
               <CardFooter>
-                <Button>View Shipments</Button>
+                <Button className="bg-[#a405cc]">View Shipments</Button>
               </CardFooter>
             </Card>
             <Card>
