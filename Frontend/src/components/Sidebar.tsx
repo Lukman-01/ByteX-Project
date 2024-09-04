@@ -5,13 +5,12 @@ function Sidebar() {
     <aside className=" inset-y-0 bg-white left-0 z-10 flex h-full w-14 flex-col border-r bg-background sm:w-60">
       <div className="flex h-14 items-center justify-center border-b sm:justify-start sm:px-6">
         <a
-          href="#"
+          href="/"
           className="flex items-center gap-2 font-semibold"
-          prefetch={false}
+          
         >
-          <Package2Icon className="h-6 w-6" />
           <div className="lg:col-span-3">
-            <h1 className=" text-4xl  text-white title">
+            <h1 className=" text-2xl drop-shadow-2xl  text-gray-400 title">
               go<span className="text-[#D434FE]">ByteX</span>
             </h1>
           </div>
@@ -20,16 +19,16 @@ function Sidebar() {
       <nav className="flex flex-1 flex-col items-center gap-4 px-2 py-6 sm:items-start sm:px-6">
         <a
           href="/dashboard"
-          className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground transition-colors hover:bg-primary/90 sm:h-10 sm:w-auto sm:gap-3 sm:rounded-md sm:px-4"
-          prefetch={false}
+          className="flex h-9 w-9 font-semibold hover:bg-[#a405cc] hover:text-white items-center justify-center rounded-lg bg-primary text-primary-foreground transition-colors hover:bg-primary/90 sm:h-10 sm:w-auto sm:gap-3 sm:rounded-md sm:px-4"
+          
         >
           <HomeIcon className="h-5 w-5 sm:h-6 sm:w-6" />
           <span className="hidden sm:inline">Dashboard</span>
         </a>
         <a
           href="/tracking"
-          className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground sm:h-10 sm:w-auto sm:gap-3 sm:rounded-md sm:px-4"
-          prefetch={false}
+          className="flex h-9 w-9 font-semibold hover:bg-[#a405cc] hover:text-white items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground sm:h-10 sm:w-auto sm:gap-3 sm:rounded-md sm:px-4"
+         
         >
           <TruckIcon className="h-5 w-5 sm:h-6 sm:w-6" />
           <span className="hidden sm:inline">Track Product</span>
@@ -38,7 +37,7 @@ function Sidebar() {
     </aside>
   );
 }
-function HomeIcon(props) {
+function HomeIcon(props:any) {
   return (
     <svg
       {...props}
@@ -58,69 +57,8 @@ function HomeIcon(props) {
   );
 }
 
-function MenuIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <line x1="4" x2="20" y1="12" y2="12" />
-      <line x1="4" x2="20" y1="6" y2="6" />
-      <line x1="4" x2="20" y1="18" y2="18" />
-    </svg>
-  );
-}
 
-function Package2Icon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z" />
-      <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9" />
-      <path d="M12 3v6" />
-    </svg>
-  );
-}
-
-function SearchIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="11" cy="11" r="8" />
-      <path d="m21 21-4.3-4.3" />
-    </svg>
-  );
-}
-
-function TruckIcon(props) {
+function TruckIcon(props:any) {
   return (
     <svg
       {...props}

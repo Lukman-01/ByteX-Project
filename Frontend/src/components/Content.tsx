@@ -14,25 +14,16 @@ import Navbar from "./Navbar";
 export default function DashboardContent() {
   return (
     <div className="flex min-h-screen w-full">
-      <Sidebar />
+      <div className="hidden md:block">
+        <Sidebar />
+      </div>
       <div className="flex flex-col flex-1 ml-4 sm:gap-x-9 sm:py-4 sm:pl-14">
         <Navbar />
         <main className="grid flex-1 mt-9 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
           <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            <Card className="sm:col-span-2 md:col-span-1">
-              <CardHeader className="pb-3">
-                <CardTitle>Orders</CardTitle>
-                <CardDescription className="max-w-lg text-balance leading-relaxed">
-                  View and manage all orders in the supply chain.
-                </CardDescription>
-              </CardHeader>
-              <CardFooter>
-                <Button>View Orders</Button>
-              </CardFooter>
-            </Card>
             <Card>
               <CardHeader className="pb-2">
-                <CardDescription>This Week</CardDescription>
+                <CardDescription>Previously Tracked</CardDescription>
                 <CardTitle className="text-4xl">125</CardTitle>
               </CardHeader>
               <CardContent>
@@ -82,7 +73,7 @@ export default function DashboardContent() {
                 </CardDescription>
               </CardHeader>
               <CardFooter>
-                <Button>View Shipments</Button>
+                <Button className="bg-[#a405cc]">View Shipments</Button>
               </CardFooter>
             </Card>
             <Card>

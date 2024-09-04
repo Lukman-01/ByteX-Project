@@ -1,9 +1,12 @@
 import "@rainbow-me/rainbowkit/styles.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import Navbar from "./Navbar";
 import Modal from "./Modal";
 import Sidebar from "./Sidebar";
+import { useReadContract } from "wagmi";
+import abi from "../constants/SupplyChain.json";
+import { contractAddress } from "../constants/contractAddress";
 
 export default function TrackingPage() {
   const [products, setProducts]: any = useState([]);
@@ -18,6 +21,23 @@ export default function TrackingPage() {
     updatedProducts[index].status = status;
     setProducts(updatedProducts);
   };
+
+  const result = useReadContract({
+    abi: abi.abi,
+    address: contractAddress,
+    functionName: "getProduct",
+    args: [
+      "0x7706b20a76deb11ecdfdbb29297593256756867caed913c420b9b5560a6cc846",
+    ],
+  },
+
+
+);
+
+  useEffect(() => {
+    console.log("Hello World");
+    console.log(result);
+  }, [result.data]);
 
   const data = [
     {
@@ -46,8 +66,10 @@ export default function TrackingPage() {
   ];
 
   return (
-    <div className="flex min-h-screen w-full bg-muted/40">
-      <Sidebar />
+    <div className="flex min-h-screen dark:text-black w-full bg-muted/40">
+      <div className="hidden md:block">
+        <Sidebar />
+      </div>
       <div className="flex flex-col sm:gap-x-9 sm:py-4 sm:pl-14">
         <Navbar />
         <main className="grid flex-1 mt-9 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
@@ -62,10 +84,10 @@ export default function TrackingPage() {
           </section>
           <section className="mb-8 flex justify-end">
             <Button
-              className="relative  px-6 py-3 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 transition-transform transform hover:scale-105"
+              className="relative  px-6 py-3 bg-[#a405cc] text-white font-semibold rounded-lg shadow-md hover:bg-[#bc0ae9] focus:outline-none focus:ring-opacity-75 transition-transform transform hover:scale-105"
               onClick={() => setShowModal(true)}
             >
-              <span className="absolute inset-0 bg-red-600 opacity-0 transition-opacity duration-300 rounded-lg hover:opacity-10"></span>
+              <span className="absolute inset-0  opacity-0 transition-opacity duration-300 rounded-lg hover:opacity-10"></span>
               Add New Product
             </Button>
           </section>
@@ -74,7 +96,7 @@ export default function TrackingPage() {
               {data.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 transition transform hover:-translate-y-1 hover:shadow-xl"
+                  className="bg-white dark:bg-gray-900 dark:shadow-xl shadow-lg rounded-lg p-6 transition transform hover:-translate-y-1 hover:shadow-xl"
                 >
                   <div className="flex justify-between items-center space-x-6">
                     <div className="space-y-1">

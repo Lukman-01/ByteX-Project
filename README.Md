@@ -94,8 +94,21 @@ module.exports = {
 
    Example output:
    ```
-   Contract deployed to: 0x2224D97f78C719a83B08c3bdE14D7a8Fa8Ed3CF3
+   Contract deployed to: 0x6E76a6C99cBDBf9d32D248907842707D52309f3e
    ```
+3. **Contract Verification**:
+   ```
+   npx hardhat verify 0x6E76a6C99cBDBf9d32D248907842707D52309f3e --contract contracts/SupplyChain.sol:SupplyChain
+   ```
+
+   The output will looks like this:
+
+   Successfully submitted source code for contract
+   contracts/SupplyChain.sol:SupplyChain at 0x6E76a6C99cBDBf9d32D248907842707D52309f3e
+   for verification on the block explorer. Waiting for verification result...
+
+   Successfully verified contract SupplyChain on the block explorer.
+   https://explorer-evm.testnet.swisstronik.com/address/0x6E76a6C99cBDBf9d32D248907842707D52309f3e#code
 
 ### Interaction with the Contract
 

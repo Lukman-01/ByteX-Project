@@ -11,4 +11,4 @@ const SupplyChainModule = buildModule("SupplyChainModule", (m) => {
 export default SupplyChainModule;
 
 
-// contract add: 0x80bE4B8A31f4c54371D6563C61E1fb7317F506Af
+// contract add: 0x7a298514739C0F45DBB9199b9CBaEdD3507A7283
