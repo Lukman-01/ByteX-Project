@@ -15,6 +15,8 @@ import { useWriteContract } from "wagmi";
 import abi from "../constants/SupplyChain.json";
 import { contractAddress } from "../constants/contractAddress";
 import { parseEther } from "viem";
+import { watchContractEvent } from '@wagmi/core'
+import { config } from "../../config";
 
 
 // addProduct
@@ -28,6 +30,16 @@ function Modal({ showModal, setShowModal, addProduct }: any) {
     customer: "",
     destination: "",
   });
+
+  const unwatch = watchContractEvent(config, {
+    address: '0x6b175474e89094c44da98b954eedeac495271d0f',
+    abi: abi.abi,
+    eventName: 'ProductAdded',
+    onLogs(logs) {
+      console.log('New logs!', logs)
+    },
+  })
+  unwatch()
 
   const { writeContract, data } = useWriteContract();
 
@@ -44,12 +56,12 @@ function Modal({ showModal, setShowModal, addProduct }: any) {
         address: contractAddress,
         functionName: "addProduct",
         args: [
-          "Test Product",
-          "0xA0",
+          newProduct.name,
+          newProduct.serialNumber,
           "0x2224D97f78C719a83B08c3bdE14D7a8Fa8Ed3CF3",
           "0x2224D97f78C719a83B08c3bdE14D7a8Fa8Ed3CF3",
-          0,
-          "lagos",
+          newProduct.status,
+          newProduct.location,
         ],
         value: parseEther("0.001"),
       },
