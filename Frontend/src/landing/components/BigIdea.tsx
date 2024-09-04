@@ -2,7 +2,7 @@ const BigIdea = () => {
   return (
     <>
       <section className="  ">
-        <div className="colo w-4/5  mx-auto py-10">
+        <div className="colo w-[90%]  mx-auto py-10 align-baseline">
           <div className="m-auto w- text-center lg:text-left">
             <img
               className="absolute right-0 animate-caret"
@@ -10,9 +10,9 @@ const BigIdea = () => {
               alt=""
             />
 
-            <h4 className="title text-3xl">
+            <h4 className="title text-4xl">
               {" "}
-              Transform your Logistics Operations with ByteX
+              Transform your Logistics <br /> with ByteX
             </h4>
             <p className=" leading-8">
               Our decentralized system for logistics is a melting pot of
@@ -23,6 +23,7 @@ const BigIdea = () => {
               problems, and creating solutions that can change the world of
               supply chain, that's what we're all about!
             </p>
+            <button className="register my-20 py-2 px-10 font-bold "> Get Started</button>
           </div>
           <div className="">
             <div className="w-full flex items-baseline">
