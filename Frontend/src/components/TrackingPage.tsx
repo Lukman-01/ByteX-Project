@@ -1,9 +1,12 @@
 import "@rainbow-me/rainbowkit/styles.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import Navbar from "./Navbar";
 import Modal from "./Modal";
 import Sidebar from "./Sidebar";
+import { useReadContract } from "wagmi";
+import abi from "../constants/SupplyChain.json";
+import { contractAddress } from "../constants/contractAddress";
 
 export default function TrackingPage() {
   const [products, setProducts]: any = useState([]);
@@ -18,6 +21,23 @@ export default function TrackingPage() {
     updatedProducts[index].status = status;
     setProducts(updatedProducts);
   };
+
+  const result = useReadContract({
+    abi: abi.abi,
+    address: contractAddress,
+    functionName: "getProduct",
+    args: [
+      "0x7706b20a76deb11ecdfdbb29297593256756867caed913c420b9b5560a6cc846",
+    ],
+  },
+
+
+);
+
+  useEffect(() => {
+    console.log("Hello World");
+    console.log(result);
+  }, [result.data]);
 
   const data = [
     {

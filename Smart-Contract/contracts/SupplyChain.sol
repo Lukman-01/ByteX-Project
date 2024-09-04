@@ -30,6 +30,7 @@ contract SupplyChain {
     }
 
     mapping(bytes32 => Product) private products;
+    bytes32[] private productIds; // Array to store all product IDs
 
     event ProductAdded(bytes32 productId, address indexed manufacturer);
     event ProductStatusUpdated(bytes32 productId, Status status, address indexed updater);
@@ -110,6 +111,8 @@ contract SupplyChain {
             healthCondition: _healthCondition,
             destination: _destination
         });
+
+        productIds.push(productId); // Store the product ID in the array
 
         emit ProductAdded(productId, msg.sender);
         return productId;
@@ -193,6 +196,18 @@ contract SupplyChain {
     function getProduct(bytes32 _productId) public view returns (Product memory) {
         _onlyAuthorized(_productId);
         return products[_productId];
+    }
+
+    /**
+     * @dev Function to retrieve all products.
+     * @return An array of Product structs representing all products.
+     */
+    function getAllProducts() public view returns (Product[] memory) {
+        Product[] memory allProducts = new Product[](productIds.length);
+        for (uint256 i = 0; i < productIds.length; i++) {
+            allProducts[i] = products[productIds[i]];
+        }
+        return allProducts;
     }
 
     /**

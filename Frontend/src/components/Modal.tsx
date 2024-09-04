@@ -14,6 +14,8 @@ import { Button } from "./ui/button";
 import { useWriteContract } from "wagmi";
 import abi from "../constants/SupplyChain.json";
 import { contractAddress } from "../constants/contractAddress";
+import { parseEther } from "viem";
+
 
 // addProduct
 
@@ -49,6 +51,7 @@ function Modal({ showModal, setShowModal, addProduct }: any) {
           0,
           "lagos",
         ],
+        value: parseEther("0.001"),
       },
       {
         onError: (e) => {
