@@ -30,7 +30,7 @@ export const CustomConnectButton = () => {
                 return (
                   <button
                     onClick={openConnectModal}
-                    className="px-4 py-2 text-white font-medium bg-black rounded-md"
+                    className="px-4 py-2 text-white font-medium register bg-transparent rounded-lg"
                     style={{
                       border: "2px solid",
                       borderImage:
@@ -46,7 +46,7 @@ export const CustomConnectButton = () => {
                 return (
                   <button
                     onClick={openChainModal}
-                    className="px-4 py-2 text-white font-medium bg-black rounded-md"
+                    className="px-4 py-2 text-white font-medium register bg-transparent rounded-lg"
                     style={{
                       border: "2px solid",
                       borderImage:
@@ -61,7 +61,7 @@ export const CustomConnectButton = () => {
               return (
                 <button
                   onClick={openAccountModal}
-                  className="px-4 py-2 text-white font-medium bg-black rounded-md"
+                  className="px-4 py-2 text-white font-medium register bg-transparent rounded-lg"
                   style={{
                     border: "2px solid",
                     borderImage:

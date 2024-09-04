@@ -42,29 +42,27 @@ const Navbar = () => {
           <SheetContent side="left" className="sm:max-w-xs">
             <nav className="grid gap-6 text-lg font-medium">
               <a
-                href="#"
+                href="/"
                 className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
-                
               >
-                <Package2Icon className="h-5 w-5 transition-all group-hover:scale-110" />
                 <div className="lg:col-span-3">
-                  <h1 className=" text-4xl  text-white title">
+                  <h1 className=" text-2xl drop-shadow-2xl text-white title">
                     go<span className="text-[#D434FE]">ByteX</span>
                   </h1>
                 </div>
               </a>
               <a
-                href="#"
+                href="/dashboard"
                 className="flex items-center gap-4 px-2.5 text-foreground"
-                prefetch={false}
+                
               >
                 <HomeIcon className="h-5 w-5" />
                 Dashboard
               </a>
               <a
-                href="#"
+                href="/tracking"
                 className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                prefetch={false}
+                
               >
                 <TruckIcon className="h-5 w-5" />
                 Track Product
@@ -76,7 +74,7 @@ const Navbar = () => {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <a href="#" prefetch={false}>
+                <a href="#">
                   Supply Chain
                 </a>
               </BreadcrumbLink>
@@ -102,7 +100,7 @@ const Navbar = () => {
   );
 };
 
-function HomeIcon(props) {
+function HomeIcon(props:any) {
   return (
     <svg
       {...props}
@@ -122,7 +120,7 @@ function HomeIcon(props) {
   );
 }
 
-function MenuIcon(props) {
+function MenuIcon(props:any) {
   return (
     <svg
       {...props}
@@ -143,48 +141,7 @@ function MenuIcon(props) {
   );
 }
 
-function Package2Icon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z" />
-      <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9" />
-      <path d="M12 3v6" />
-    </svg>
-  );
-}
-
-function SearchIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="11" cy="11" r="8" />
-      <path d="m21 21-4.3-4.3" />
-    </svg>
-  );
-}
-
-function TruckIcon(props) {
+function TruckIcon(props:any) {
   return (
     <svg
       {...props}

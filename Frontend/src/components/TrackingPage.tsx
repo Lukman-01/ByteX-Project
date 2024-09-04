@@ -47,7 +47,9 @@ export default function TrackingPage() {
 
   return (
     <div className="flex min-h-screen dark:text-black w-full bg-muted/40">
-      <Sidebar />
+      <div className="hidden md:block">
+        <Sidebar />
+      </div>
       <div className="flex flex-col sm:gap-x-9 sm:py-4 sm:pl-14">
         <Navbar />
         <main className="grid flex-1 mt-9 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
@@ -62,7 +64,7 @@ export default function TrackingPage() {
           </section>
           <section className="mb-8 flex justify-end">
             <Button
-              className="relative  px-6 py-3 bg-[#a405cc] text-white font-semibold rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 transition-transform transform hover:scale-105"
+              className="relative  px-6 py-3 bg-[#a405cc] text-white font-semibold rounded-lg shadow-md hover:bg-[#bc0ae9] focus:outline-none focus:ring-opacity-75 transition-transform transform hover:scale-105"
               onClick={() => setShowModal(true)}
             >
               <span className="absolute inset-0  opacity-0 transition-opacity duration-300 rounded-lg hover:opacity-10"></span>

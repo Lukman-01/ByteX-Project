@@ -20,9 +20,11 @@ import { contractAddress } from "../constants/contractAddress";
 function Modal({ showModal, setShowModal, addProduct }: any) {
   const [newProduct, setNewProduct] = useState({
     name: "",
-    status: "",
-    location: "",
     serialNumber: "",
+    transporter: "",
+    health: "",
+    customer: "",
+    destination: "",
   });
 
   const { writeContract, data } = useWriteContract();
@@ -61,7 +63,7 @@ function Modal({ showModal, setShowModal, addProduct }: any) {
   return (
     <div>
       <Dialog open={showModal} onOpenChange={setShowModal}>
-        <DialogContent className="sm:max-w-md text-black bg-white shadow-lg rounded-lg p-6">
+        <DialogContent className="sm:max-w-md text-black dark:text-white bg-white shadow-lg rounded-lg p-6">
           <DialogHeader>
             <DialogTitle>Add New Product</DialogTitle>
             <DialogDescription>
@@ -73,12 +75,12 @@ function Modal({ showModal, setShowModal, addProduct }: any) {
               handleCreateProduct(e);
             }}
           >
-            <div className="grid gap-4 space-y-5">
+            <div className="grid gap-4 space-y-2">
               <div className="grid gap-1">
                 <Label htmlFor="name">Product Name</Label>
-                <Input
+                <input
                   id="name"
-                  className="outline-none "
+                  className="outline-none dark:text-white rounded-md dark:bg-gray-900 dark:shadow-lg w-full border py-1 px-1"
                   name="name"
                   value={newProduct.name}
                   onChange={handleInputChange}
@@ -87,66 +89,65 @@ function Modal({ showModal, setShowModal, addProduct }: any) {
               </div>
 
               <div className="grid gap-1">
-                <Label htmlFor="status">Serial Number</Label>
-                <Input
-                  id="status"
-                  className="outline-none "
-                  name="status"
-                  value={newProduct.status}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-              <div className="grid gap-1">
-                <Label htmlFor="location">Transporter</Label>
-                <Input
-                  id="location"
-                  className="outline-none "
-                  name="location"
-                  value={newProduct.location}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-              <div className="grid gap-1">
-                <Label htmlFor="serialNumber">Product Health Condition</Label>
-                <Input
-                  id="serialNumber"
-                  className="outline-none "
-                  name="serialNumber"
+                <Label htmlFor="serial">Serial Number</Label>
+                <input
+                  id="serial"
+                  className="outline-none dark:text-white rounded-md dark:bg-gray-900 dark:shadow-lg w-full border py-1 px-1"
+                  name="serial"
                   value={newProduct.serialNumber}
                   onChange={handleInputChange}
                   required
                 />
               </div>
               <div className="grid gap-1">
-                <Label htmlFor="serialNumber">Customer</Label>
-                <Input
-                  id="serialNumber"
-                  className="outline-none "
-                  name="serialNumber"
-                  value={newProduct.serialNumber}
+                <Label htmlFor="transporter">Transporter</Label>
+                <input
+                  id="transporter"
+                  className="outline-none dark:text-white rounded-md dark:bg-gray-900 dark:shadow-lg w-full border py-1 px-1 "
+                  name="transporter"
+                  value={newProduct.transporter}
                   onChange={handleInputChange}
                   required
                 />
               </div>
               <div className="grid gap-1">
-                <Label htmlFor="serialNumber">Destination</Label>
-                <Input
-                  id="serialNumber"
-                  className="outline-none "
-                  name="serialNumber"
-                  value={newProduct.serialNumber}
+                <Label htmlFor="health">Product Health Condition</Label>
+                <input
+                  id="health"
+                  className="outline-none dark:text-white rounded-md dark:bg-gray-900 dark:shadow-lg w-full border py-1 px-1 "
+                  name="health"
+                  value={newProduct.health}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="grid gap-1">
+                <Label htmlFor="customer">Customer</Label>
+                <input
+                  id="customer"
+                  className="outline-none dark:text-white rounded-md dark:bg-gray-900 dark:shadow-lg w-full border py-1 px-1 "
+                  name="customer"
+                  value={newProduct.customer}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="grid gap-1">
+                <Label htmlFor="destination">Destination</Label>
+                <input
+                  id="destination"
+                  className="outline-none dark:text-white rounded-md dark:bg-gray-900 dark:shadow-lg w-full border py-1 px-1 "
+                  name="destination"
+                  value={newProduct.destination}
                   onChange={handleInputChange}
                   required
                 />
               </div>
             </div>
             <DialogFooter className="mt-4 flex justify-between">
-              <Button type="submit">Add Product</Button>
-              <div>
-                <Button variant="outline">Cancel</Button>
-              </div>
+              <Button type="submit" className="register dark:text-white">
+                Add Product
+              </Button>
             </DialogFooter>
           </form>
         </DialogContent>

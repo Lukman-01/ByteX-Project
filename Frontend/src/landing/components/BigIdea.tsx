@@ -1,4 +1,11 @@
+import { useNavigate } from "react-router-dom";
 const BigIdea = () => {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate("/dashboard");
+  };
+
   return (
     <>
       <section className="  ">
@@ -14,16 +21,19 @@ const BigIdea = () => {
               {" "}
               Transform your Logistics <br /> with ByteX
             </h4>
-            <p className=" leading-8">
-              Our decentralized system for logistics is a melting pot of
-              supplychain, its purpose is as clear as day: to shape the future.
-              With technology we bring wealth to your hand by clear presentation
-              of your day-to-day activities free from hurdles of middleman Cut
-              the chain of the middle man. Get involded in Solving real-world
-              problems, and creating solutions that can change the world of
-              supply chain, that's what we're all about!
+            <p className=" leading-8 text-md">
+              Our decentralized logistics system revolutionizes supply chains by
+              eliminating middlemen, empowering you with direct control and
+              transparency. Join us in solving real-world problems and shaping
+              the future of supply chain management.
             </p>
-            <button className="register my-20 py-2 px-10 font-bold "> Get Started</button>
+            <button
+              onClick={handleButtonClick}
+              className="register my-20 py-2 px-10 font-bold "
+            >
+              {" "}
+              Get Started
+            </button>
           </div>
           <div className="">
             <div className="w-full flex items-baseline">
