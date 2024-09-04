@@ -2,7 +2,7 @@
 export default {
   darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-
+  darkMode: 'class', // Use class-based dark mode
   theme: {
     extend: {
       borderRadius: {
