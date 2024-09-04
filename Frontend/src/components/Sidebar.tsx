@@ -10,7 +10,11 @@ function Sidebar() {
           prefetch={false}
         >
           <Package2Icon className="h-6 w-6" />
-          <span className="hidden sm:inline">Supply Chain Blockchain</span>
+          <div className="lg:col-span-3">
+            <h1 className=" text-4xl  text-white title">
+              go<span className="text-[#D434FE]">ByteX</span>
+            </h1>
+          </div>
         </a>
       </div>
       <nav className="flex flex-1 flex-col items-center gap-4 px-2 py-6 sm:items-start sm:px-6">

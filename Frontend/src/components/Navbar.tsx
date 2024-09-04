@@ -10,11 +10,11 @@ import {
   BreadcrumbPage,
 } from "./ui/breadcrumb";
 import { Sheet, SheetTrigger, SheetContent } from "./ui/sheet";
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon } from "lucide-react";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("light");
-  
+
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
     setTheme(savedTheme);
@@ -46,7 +46,11 @@ const Navbar = () => {
                 prefetch={false}
               >
                 <Package2Icon className="h-5 w-5 transition-all group-hover:scale-110" />
-                <span className="sr-only">Supply Chain</span>
+                <div className="lg:col-span-3">
+                  <h1 className=" text-4xl  text-white title">
+                    go<span className="text-[#D434FE]">ByteX</span>
+                  </h1>
+                </div>
               </a>
               <a
                 href="#"
@@ -96,8 +100,6 @@ const Navbar = () => {
     </>
   );
 };
-
-
 
 function HomeIcon(props) {
   return (

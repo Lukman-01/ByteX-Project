@@ -6,6 +6,7 @@ import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import DashboardContent from "./components/Content";
 import TrackingPage from "./components/TrackingPage";
+import Home from "./landing/Home";
 
 const queryClient = new QueryClient();
 {
@@ -19,6 +20,7 @@ function App() {
           <RainbowKitProvider modalSize="wide">
             <Router>
               <Routes>
+                <Route path="/" element={<Home />} />
                 <Route path="/dashboard" element={<DashboardContent />} />
                 <Route path="/tracking" element={<TrackingPage />} />
               </Routes>

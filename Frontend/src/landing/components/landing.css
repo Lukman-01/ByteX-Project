@@ -1,13 +1,5 @@
 @import url("https://api.fontshare.com/v2/css?f[]=clash-display@200,400,700,500,600,1,300&f[]=montserrat@500,1,900,700,701,801,200,401,301,400,601,100,101,2,201,800,300,600,501&display=swap"); 
-body, html{
-    font-weight: 400;
-    color:white;
-    font-family: 'Montserrat', sans-serif; 
-    font-size: 14px;
-    max-width: 100%;
-    overflow-x: hidden;
-    background: black;
-  }
+
 .register {
     background: linear-gradient(90deg, #FE34B9, #FF26B9, #D434FE, #903AFF);
     color: #fff;

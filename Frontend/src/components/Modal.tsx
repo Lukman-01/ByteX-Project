@@ -7,22 +7,22 @@ import {
   DialogFooter,
   DialogClose,
 } from "./ui/dialog";
-import { useState } from "react"
+import { useState } from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 
-function Modal({ showModal, setShowModal, addProduct }:any) {
-    const [newProduct, setNewProduct] = useState({
-        name: "",
-        status: "",
-        location: "",
-        serialNumber: "",
-      })
-    
-      const handleInputChange = (e:any) => {
-        setNewProduct({ ...newProduct, [e.target.name]: e.target.value })
-      }
+function Modal({ showModal, setShowModal, addProduct }: any) {
+  const [newProduct, setNewProduct] = useState({
+    name: "",
+    status: "",
+    location: "",
+    serialNumber: "",
+  });
+
+  const handleInputChange = (e: any) => {
+    setNewProduct({ ...newProduct, [e.target.name]: e.target.value });
+  };
 
   return (
     <div>
@@ -45,17 +45,19 @@ function Modal({ showModal, setShowModal, addProduct }:any) {
                 <Label htmlFor="name">Product Name</Label>
                 <Input
                   id="name"
+                  className="outline-none "
                   name="name"
                   value={newProduct.name}
                   onChange={handleInputChange}
                   required
                 />
               </div>
-             
+
               <div className="grid gap-1">
                 <Label htmlFor="status">Serial Number</Label>
                 <Input
                   id="status"
+                  className="outline-none "
                   name="status"
                   value={newProduct.status}
                   onChange={handleInputChange}
@@ -66,6 +68,7 @@ function Modal({ showModal, setShowModal, addProduct }:any) {
                 <Label htmlFor="location">Transporter</Label>
                 <Input
                   id="location"
+                  className="outline-none "
                   name="location"
                   value={newProduct.location}
                   onChange={handleInputChange}
@@ -76,6 +79,7 @@ function Modal({ showModal, setShowModal, addProduct }:any) {
                 <Label htmlFor="serialNumber">Product Health Condition</Label>
                 <Input
                   id="serialNumber"
+                  className="outline-none "
                   name="serialNumber"
                   value={newProduct.serialNumber}
                   onChange={handleInputChange}
@@ -86,6 +90,7 @@ function Modal({ showModal, setShowModal, addProduct }:any) {
                 <Label htmlFor="serialNumber">Customer</Label>
                 <Input
                   id="serialNumber"
+                  className="outline-none "
                   name="serialNumber"
                   value={newProduct.serialNumber}
                   onChange={handleInputChange}
@@ -96,6 +101,7 @@ function Modal({ showModal, setShowModal, addProduct }:any) {
                 <Label htmlFor="serialNumber">Destination</Label>
                 <Input
                   id="serialNumber"
+                  className="outline-none "
                   name="serialNumber"
                   value={newProduct.serialNumber}
                   onChange={handleInputChange}
