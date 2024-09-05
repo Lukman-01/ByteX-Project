@@ -98,7 +98,7 @@ module.exports = {
    ```
 3. **Contract Verification**:
    ```
-   npx hardhat verify 0x6E76a6C99cBDBf9d32D248907842707D52309f3e --contract contracts/SupplyChain.sol:SupplyChain
+   npx hardhat verify 0xFc1169dEaF7D43DC80fB924DCCdCf8A184791c6a --contract contracts/SupplyChain.sol:SupplyChain
    ```
 
    The output will looks like this:
@@ -122,7 +122,7 @@ npx hardhat run scripts/getCreationFee.ts --network swisstronik
 ```
 
 #### Transaction Hash for Updating Creation Fee:
-- **Transaction Hash**: `0x33f1271dc261768cbb2b3e63f4ed5de24f0aa39d49c7083af3bff0d9a12dfe43`
+- **Transaction Hash**: `0xea3683f8c1a9fc33c814d54c9c74f73ae0fd6689053f07f8a6f57800f3f9d473`
 - **Image of transaction confirmation**:
 
 ![Transaction Confirmation](./images/Interaction2.png)
@@ -147,3 +147,95 @@ The contract includes several security measures:
 - **Private Functions for Critical Checks**: Functions that handle permissions or restrict access (like `_onlyOwner` and `_onlyAuthorized`) are declared private, ensuring they cannot be accessed externally.
 
 These optimizations and security measures ensure the contract is efficient in terms of both gas usage and security, reducing costs and vulnerabilities.
+
+
+### Frontend
+
+## Introduction
+
+This application is a blockchain-based supply chain tracking system that provides real-time visibility into the movement and status of products. It leverages Web3.js and the Swisstronik plugin to interact with the Ethereum-based blockchain network and smart contracts. Users can register new products on the blockchain, track their status, and update their information as they move through the supply chain. The app consists of three main pages: **Home**, **Dashboard**, and **Tracking**.
+
+---
+
+## Pages Overview
+
+### 1. **Home Page**
+
+- **Purpose**: The Home Page is the landing page of the application, offering users an introduction to the platform. It highlights the benefits of using blockchain for supply chain tracking, such as transparency, immutability, and real-time updates.
+  
+- **Features**:
+  - A simple and clean introduction to the application.
+  - Call-to-action buttons for signing up or logging in to start tracking products.
+
+---
+
+### 2. **Tracking Page**
+
+- **Purpose**: The Tracking Page is where users can add new products to the blockchain and monitor the status of their existing products.
+  
+- **Features**:
+  - **Add New Product**: A form that allows users to register new products on the blockchain. Information such as product name, serial number, transporter, consumer, and health condition is required.
+  - **Product List**: Displays all registered products. Each product entry shows the name, serial number, transporter, current status, and action options (e.g., update status).
+  - **Real-Time Updates**: After adding or modifying a product, users can immediately see the changes reflected on the page.
+  - **Blockchain Integration**: The tracking page interacts directly with a smart contract deployed on the Ethereum blockchain via Web3.js and the Swisstronik plugin. All actions are recorded immutably on the blockchain.
+
+---
+
+## How It Works
+
+### Blockchain and Smart Contract Interaction
+- The app uses **Web3.js** and the **Swisstronik plugin** to communicate with an Ethereum-compatible blockchain network.
+- **Smart Contract**: The core functionality of the supply chain tracking system is implemented in a Solidity smart contract. This contract manages products and their statuses.
+- **Contract Methods**:
+  - `addProduct`: Registers a new product on the blockchain.
+  - `getAllProducts`: Retrieves all products registered by the user.
+  - `updateStatus`: Updates the status of a product (e.g., from "pending" to "intransit").
+
+---
+
+## Setup and Installation
+
+To set up the application locally:
+
+1. **Clone the repository**:
+   ```bash
+   git https://github.com/Lukman-01/ByteX-Project.git
+   cd Frontend
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Configure environment**:
+   - Ensure you have a `.env` file in the root directory with the following:
+     - `RPC_URL`: The Swisstronik testnet or mainnet RPC URL.
+     - `PRIVATE_KEY`: Your private key for signing transactions on the blockchain.
+
+4. **Run the application**:
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## Technologies Used
+
+- **Frontend**:
+  - React.js
+  - Tailwind CSS
+  - Web3.js
+  - Swisstronik Plugin
+  - RainbowKit (for wallet management)
+
+- **Backend (Smart Contract)**:
+  - Solidity
+  - Hardhat
+
+---
+
+## Future Improvements
+
+- Add notification features for real-time tracking updates.
+- Enhance security features with multi-signature contracts for high-value products.

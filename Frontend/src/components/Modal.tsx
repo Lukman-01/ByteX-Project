@@ -102,18 +102,18 @@ function Modal({ showModal, setShowModal, addProduct }: any) {
                   required
                 />
               </div>
-
               <div className="grid gap-1">
-                <Label htmlFor="serial">Serial Number</Label>
+                <Label htmlFor="serialNumber">Serial Number</Label>
                 <input
-                  id="serial"
+                  id="serialNumber"
                   className="outline-none dark:text-white rounded-md dark:bg-gray-900 dark:shadow-lg w-full border py-1 px-1"
-                  name="serial"
+                  name="serialNumber"
                   value={newProduct.serialNumber}
                   onChange={handleInputChange}
                   required
                 />
               </div>
+
               <div className="grid gap-1">
                 <Label htmlFor="transporter">Transporter</Label>
                 <input
