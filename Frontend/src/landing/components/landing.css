@@ -3,7 +3,7 @@
 .register {
     background: linear-gradient(90deg, #FE34B9, #FF26B9, #D434FE, #903AFF);
     color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     /* border-image-slice: 1; */
     border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
   }

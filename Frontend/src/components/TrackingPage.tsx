@@ -29,10 +29,7 @@ export default function TrackingPage() {
     args: [
       "0x7706b20a76deb11ecdfdbb29297593256756867caed913c420b9b5560a6cc846",
     ],
-  },
-
-
-);
+  });
 
   useEffect(() => {
     console.log("Hello World");
@@ -56,90 +53,104 @@ export default function TrackingPage() {
       status: "pending",
       statusupdate: ["pending", "intransit"],
     },
-    {
-      id: 3,
-      name: "shoes",
-      serialNumber: "5B38Da6a701c568545dCfcB0FcB875f56beddC4",
-      transp: "0x5B38Da6a701c568545dCfcB03FcB875f56beddC4",
-      status: "pending",
-    },
   ];
 
   return (
-    <div className="flex min-h-screen dark:text-black w-full bg-muted/40">
+    <div className="flex flex-col md:flex-row min-h-screen dark:bg-black bg-muted/40 w-11/12">
+      {/* Sidebar - Hidden on small screens */}
       <div className="hidden md:block">
         <Sidebar />
       </div>
-      <div className="flex flex-col sm:gap-x-9 sm:py-4 sm:pl-14">
+
+      {/* Main content */}
+      <div className="flex flex-col w-full p-4 sm:gap-4 md:pl-10 md:pt-6">
         <Navbar />
-        <main className="grid flex-1 mt-9 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
-          <section>
-            <h2 className="text-3xl font-bold mb-4">
+        <main className="flex-1 mt-6 p-2 md:p-4">
+          {/* Header */}
+          <div className="mb-6 text-center md:text-left">
+            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">
               Welcome to Supply Chain Tracker
-            </h2>
-            <p className="text-lg text-muted-foreground mb-4">
+            </h1>
+            <p className="text-sm sm:text-lg text-gray-600 dark:text-gray-300">
               Our blockchain-based supply chain tracking system provides
               real-time visibility into the movement of your products.
             </p>
-          </section>
-          <section className="mb-8 flex justify-end">
+          </div>
+
+          {/* Add Product Button */}
+          <section className="mb-8 flex justify-center md:justify-end">
             <Button
-              className="relative  px-6 py-3 bg-[#a405cc] text-white font-semibold rounded-lg shadow-md hover:bg-[#bc0ae9] focus:outline-none focus:ring-opacity-75 transition-transform transform hover:scale-105"
+              className="px-5 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg dark:shadow-slate-900 shadow-md hover:bg-gradient-to-l transition-transform transform hover:scale-105"
               onClick={() => setShowModal(true)}
             >
-              <span className="absolute inset-0  opacity-0 transition-opacity duration-300 rounded-lg hover:opacity-10"></span>
               Add New Product
             </Button>
           </section>
+
+          {/* Product List */}
           <section>
-            <div className="mx-auto space-y-6">
+            <div className="space-y-6">
               {data.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-white dark:bg-gray-900 dark:shadow-xl shadow-lg rounded-lg p-6 transition transform hover:-translate-y-1 hover:shadow-xl"
+                  className="bg-white dark:bg-gray-900 rounded-xl p-4 md:p-6 shadow-lg transition transform hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <div className="flex justify-between items-center space-x-6">
-                    <div className="space-y-1">
-                      <h3 className="text-md font-medium text-gray-900">
+                  <div className="flex flex-col sm:flex-row sm:justify-between">
+                    {/* Product Details */}
+                    <div className="mb-4 sm:mb-0">
+                      <h3 className="text-md font-medium dark:text-white">
                         Product
                       </h3>
                       <p className="text-sm text-gray-500">{item.name}</p>
                     </div>
-                    <div className="space-y-1">
-                      <h3 className="text-md font-medium text-gray-900">
+                    <div className="mb-4 sm:mb-0">
+                      <h3 className="text-md font-medium dark:text-white">
                         Serial Number
                       </h3>
-                      <p className="text-sm text-gray-500 font-semibold">
-                        {item.serialNumber}
-                      </p>
+                      <div className="relative group">
+                        <p className="text-sm text-gray-500 font-semibold truncate max-w-[120px]">
+                          {item.serialNumber}
+                        </p>
+
+                        {/* Tooltip - Full serial number */}
+                        <span className="absolute left-0 hidden w-auto p-2 text-xs text-white bg-black rounded-lg group-hover:block dark:bg-gray-700 whitespace-nowrap">
+                          {item.serialNumber}
+                        </span>
+                      </div>
                     </div>
-                    <div className="space-y-1">
-                      <h3 className="text-md font-medium text-gray-900">
+                    <div className="mb-4 sm:mb-0">
+                      <h3 className="text-md font-medium dark:text-white">
                         Transporter
                       </h3>
-                      <p className="text-sm text-gray-500 font-semibold">
-                        {item.transp}
-                      </p>
+                      <div className="relative group">
+                        <p className="text-sm text-gray-500 font-semibold truncate max-w-[120px]">
+                          {item.transp}
+                        </p>
+
+                        {/* Tooltip - Full serial number */}
+                        <span className="absolute left-0 hidden w-auto p-2 text-xs text-white bg-black rounded-lg group-hover:block dark:bg-gray-700 whitespace-nowrap">
+                          {item.serialNumber}
+                        </span>
+                      </div>
                     </div>
-                    <div className="space-y-1">
-                      <h3 className="text-md font-medium text-gray-900">
+
+                    <div className="mb-4 sm:mb-0">
+                      <h3 className="text-md font-medium dark:text-white">
                         Status
                       </h3>
                       <p className="text-sm text-green-500 font-semibold">
                         {item.status}
                       </p>
                     </div>
-                    <div className="space-y-1">
-                      <h3 className="text-md font-medium text-gray-900">
+                    <div>
+                      <h3 className="text-md font-medium dark:text-white">
                         Action
                       </h3>
-                      <p className="text-sm text-gray-500 font-semibold">
-                        <select className="border border-gray-300 rounded">
-                          <option className="p-2">pending</option>
-                          <option className="p-2">intransit</option>
-                          <option className="p-2">delivered</option>
-                        </select>
-                      </p>
+                      <select className="border p-2 border-gray-300 rounded dark:bg-gray-800 dark:border-gray-600">
+                        <option>pending</option>
+                        <option>intransit</option>
+                        <option>delivered</option>
+                      </select>
                     </div>
                   </div>
                 </div>
@@ -148,32 +159,13 @@ export default function TrackingPage() {
           </section>
         </main>
       </div>
+
+      {/* Modal */}
       <Modal
         showModal={showModal}
         setShowModal={setShowModal}
         addProduct={addProduct}
       />
     </div>
-  );
-}
-
-function MoveVerticalIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <polyline points="8 18 12 22 16 18" />
-      <polyline points="8 6 12 2 16 6" />
-      <line x1="12" x2="12" y1="2" y2="22" />
-    </svg>
   );
 }

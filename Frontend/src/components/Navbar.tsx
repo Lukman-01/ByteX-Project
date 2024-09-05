@@ -45,7 +45,7 @@ const Navbar = () => {
                 href="/"
                 className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
               >
-                <div className="lg:col-span-3">
+                <div className="lg:col-span-3 drop-shadow-2xl">
                   <h1 className=" text-2xl drop-shadow-2xl text-white title">
                     go<span className="text-[#D434FE]">ByteX</span>
                   </h1>
@@ -54,7 +54,6 @@ const Navbar = () => {
               <a
                 href="/dashboard"
                 className="flex items-center gap-4 px-2.5 text-foreground"
-                
               >
                 <HomeIcon className="h-5 w-5" />
                 Dashboard
@@ -62,7 +61,6 @@ const Navbar = () => {
               <a
                 href="/tracking"
                 className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                
               >
                 <TruckIcon className="h-5 w-5" />
                 Track Product
@@ -74,9 +72,7 @@ const Navbar = () => {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <a href="#">
-                  Supply Chain
-                </a>
+                <a href="#">Supply Chain</a>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
@@ -89,7 +85,11 @@ const Navbar = () => {
         {/* This div pushes the toggle and ConnectButton to the end */}
         <div className="ml-auto flex items-center gap-4">
           <span onClick={toggleTheme} className="p-2 rounded cursor-pointer">
-            {theme === "light" ? <Moon /> : <Sun />}
+            {theme === "light" ? (
+              <Moon className="" />
+            ) : (
+              <Sun className="text-white" />
+            )}
           </span>
           <div className="">
             <CustomConnectButton />
@@ -100,7 +100,7 @@ const Navbar = () => {
   );
 };
 
-function HomeIcon(props:any) {
+function HomeIcon(props: any) {
   return (
     <svg
       {...props}
@@ -120,7 +120,7 @@ function HomeIcon(props:any) {
   );
 }
 
-function MenuIcon(props:any) {
+function MenuIcon(props: any) {
   return (
     <svg
       {...props}
@@ -141,7 +141,7 @@ function MenuIcon(props:any) {
   );
 }
 
-function TruckIcon(props:any) {
+function TruckIcon(props: any) {
   return (
     <svg
       {...props}

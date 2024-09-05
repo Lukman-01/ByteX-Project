@@ -1,14 +1,8 @@
-import logo from "../assets/logo.png";
-
 function Sidebar() {
   return (
-    <aside className=" inset-y-0 bg-white left-0 z-10 flex h-full w-14 flex-col border-r bg-background sm:w-60">
+    <aside className=" inset-y-0 bg-white dark:bg-gray-900 shadow-md dark:text-white dark:shadow-xl left-0 z-10 flex h-full w-14 flex-col sm:w-60">
       <div className="flex h-14 items-center justify-center border-b sm:justify-start sm:px-6">
-        <a
-          href="/"
-          className="flex items-center gap-2 font-semibold"
-          
-        >
+        <a href="/" className="flex items-center gap-2 font-semibold">
           <div className="lg:col-span-3">
             <h1 className=" text-2xl drop-shadow-2xl  text-gray-400 title">
               go<span className="text-[#D434FE]">ByteX</span>
@@ -19,16 +13,14 @@ function Sidebar() {
       <nav className="flex flex-1 flex-col items-center gap-4 px-2 py-6 sm:items-start sm:px-6">
         <a
           href="/dashboard"
-          className="flex h-9 w-9 font-semibold hover:bg-[#a405cc] hover:text-white items-center justify-center rounded-lg bg-primary text-primary-foreground transition-colors hover:bg-primary/90 sm:h-10 sm:w-auto sm:gap-3 sm:rounded-md sm:px-4"
-          
+          className="flex h-9 w-9 font-semibold hover:bg-[#a405cc] text-[#a405cc] px-3 hover:text-white dark:text-white items-center justify-center rounded-lg bg-primary text-primary-foreground transition-colors hover:bg-primary/90 sm:h-10 sm:w-auto sm:gap-3 sm:rounded-md sm:px-4"
         >
           <HomeIcon className="h-5 w-5 sm:h-6 sm:w-6" />
           <span className="hidden sm:inline">Dashboard</span>
         </a>
         <a
           href="/tracking"
-          className="flex h-9 w-9 font-semibold hover:bg-[#a405cc] hover:text-white items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground sm:h-10 sm:w-auto sm:gap-3 sm:rounded-md sm:px-4"
-         
+          className="flex h-9 w-9 font-semibold hover:bg-[#a405cc] text-[#a405cc] px-3 hover:text-white dark:text-white items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground sm:h-10 sm:w-auto sm:gap-3 sm:rounded-md sm:px-4"
         >
           <TruckIcon className="h-5 w-5 sm:h-6 sm:w-6" />
           <span className="hidden sm:inline">Track Product</span>
@@ -37,7 +29,7 @@ function Sidebar() {
     </aside>
   );
 }
-function HomeIcon(props:any) {
+function HomeIcon(props: any) {
   return (
     <svg
       {...props}
@@ -57,8 +49,7 @@ function HomeIcon(props:any) {
   );
 }
 
-
-function TruckIcon(props:any) {
+function TruckIcon(props: any) {
   return (
     <svg
       {...props}

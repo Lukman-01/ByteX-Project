@@ -21,7 +21,7 @@ const BigIdea = () => {
               {" "}
               Transform your Logistics <br /> with ByteX
             </h4>
-            <p className=" leading-8 text-md">
+            <p className=" leading-8 text-xl">
               Our decentralized logistics system revolutionizes supply chains by
               eliminating middlemen, empowering you with direct control and
               transparency. Join us in solving real-world problems and shaping
