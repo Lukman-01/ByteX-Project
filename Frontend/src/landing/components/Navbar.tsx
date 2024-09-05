@@ -5,7 +5,7 @@ const Navbar = () => {
 
     return (
         <>
-            <header className="sticky w-full top-0 z-20   bg-img">
+            <header className="sticky w-full top-0 z-50 bg-black  bg-img">
                 <div className="container mx-auto py-6 w-[90%]  flex justify-between items-center">
                    
                     <div className="lg:col-span-3">

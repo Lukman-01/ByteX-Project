@@ -3,7 +3,7 @@ const Footer = () => {
         <>
             <footer className="bg-[#140D27]">
 
-                <p className="text-center text-white py-10">All rights reserved. © getlinked Ltd.</p>
+                <p className="text-center text-white py-10">All rights reserved. © ByteX.</p>
             </footer>
         </>
     );

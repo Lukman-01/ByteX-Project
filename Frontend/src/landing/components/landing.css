@@ -23,6 +23,9 @@
     font-family: 'Clash Display', sans-serif; 
     @apply font-bold text-[#D434FE] lg:leading-10 pb-3  text-xl md:text-3xl 
   }
+  .dark-bg {
+    background: linear-gradient(157.28deg, #6713bb -4.15%, #5c364f 35.01%, #554d09 60.78%);
+}
   .semi-title{
   font-family: 'Clash Display', sans-serif; 
   @apply font-semibold text-[#D434FE] lg:leading-10 pb-3
