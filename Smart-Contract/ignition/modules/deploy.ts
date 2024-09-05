@@ -12,3 +12,4 @@ export default SupplyChainModule;
 
 
 // contract add: 0x7a298514739C0F45DBB9199b9CBaEdD3507A7283
+//npx hardhat verify --network lisk-sepolia 0x7a298514739C0F45DBB9199b9CBaEdD3507A7283
