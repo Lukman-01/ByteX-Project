@@ -104,11 +104,11 @@ module.exports = {
    The output will looks like this:
 
    Successfully submitted source code for contract
-   contracts/SupplyChain.sol:SupplyChain at 0x6E76a6C99cBDBf9d32D248907842707D52309f3e
+   contracts/SupplyChain.sol:SupplyChain at 0xFc1169dEaF7D43DC80fB924DCCdCf8A184791c6a
    for verification on the block explorer. Waiting for verification result...
 
    Successfully verified contract SupplyChain on the block explorer.
-   https://explorer-evm.testnet.swisstronik.com/address/0x6E76a6C99cBDBf9d32D248907842707D52309f3e#code
+   https://explorer-evm.testnet.swisstronik.com/address/0xFc1169dEaF7D43DC80fB924DCCdCf8A184791c6a#code
 
 ### Interaction with the Contract
 
@@ -122,7 +122,7 @@ npx hardhat run scripts/getCreationFee.ts --network swisstronik
 ```
 
 #### Transaction Hash for Updating Creation Fee:
-- **Transaction Hash**: `0xe257cbe5c17ab1caf1c22fc32d3f20a604a15fbd040424ca3065cb8154309fca`
+- **Transaction Hash**: `0x33f1271dc261768cbb2b3e63f4ed5de24f0aa39d49c7083af3bff0d9a12dfe43`
 - **Image of transaction confirmation**:
 
 ![Transaction Confirmation](./images/Interaction2.png)
