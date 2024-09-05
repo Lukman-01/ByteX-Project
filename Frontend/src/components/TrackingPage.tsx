@@ -1,7 +1,7 @@
 import "@rainbow-me/rainbowkit/styles.css";
 import { useEffect, useState } from "react";
 import Web3 from "web3";
-import { SwisstronikPlugin } from "@swisstronik/web3-plugin-swisstronik";
+//import { SwisstronikPlugin } from "@swisstronik/web3-plugin-swisstronik";
 import { Button } from "./ui/button";
 import Navbar from "./Navbar";
 import Modal from "./Modal";
@@ -10,9 +10,9 @@ import abi from "../constants/SupplyChain.json";
 import { contractAddress } from "../constants/contractAddress";
 
 export default function TrackingPage() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts]:any = useState([]);
   const [showModal, setShowModal] = useState(false);
-  const [newProduct, setNewProduct] = useState({
+  const [newProduct, setNewProduct]:any = useState({
     name: "",
     serialNumber: "",
     transporter: "",
@@ -23,7 +23,7 @@ export default function TrackingPage() {
 
   // Initialize Web3.js and Swisstronik plugin
   const web3 = new Web3("https://json-rpc.testnet.swisstronik.com/");
-  web3.registerPlugin(new SwisstronikPlugin());
+  //web3.registerPlugin(new SwisstronikPlugin());
   const contract = new web3.eth.Contract(abi.abi, contractAddress);
 
   // Load products from the smart contract
@@ -37,7 +37,7 @@ export default function TrackingPage() {
   };
 
   // Add new product to the contract
-  const addProductToChain = async (product) => {
+  const addProductToChain = async (product:any) => {
     try {
       const [account] = await web3.eth.getAccounts(); // Get the user's wallet address
 
@@ -56,10 +56,11 @@ export default function TrackingPage() {
           .encodeABI(),
         value: web3.utils.toWei("0.001", "ether"), // Send 0.001 ETH as creation fee
       };
+      console.log(tx);
 
       // Send the shielded transaction using the Swisstronik plugin
-      const receipt = await web3.swisstronik.sendTransaction(tx);
-      console.log("Transaction successful:", receipt);
+      //const receipt = await web3.swisstronik.sendTransaction(tx);
+      //console.log("Transaction successful:", receipt);
 
       // After successful transaction, fetch the updated list of products
       loadProducts();
@@ -69,7 +70,7 @@ export default function TrackingPage() {
   };
 
   // Handle form submission to add a new product
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = (e:any) => {
     e.preventDefault();
     addProductToChain(newProduct);
     setShowModal(false);
@@ -109,7 +110,7 @@ export default function TrackingPage() {
 
           <section>
             <div className="space-y-6">
-              {products.map((item, index) => (
+              {products.map((item:any, index:any) => (
                 <div
                   key={index}
                   className="bg-white dark:bg-gray-900 rounded-xl p-4 md:p-6 shadow-lg transition transform hover:-translate-y-1 hover:shadow-xl"

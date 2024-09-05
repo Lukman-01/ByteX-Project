@@ -5,11 +5,11 @@ import {
   DialogTitle,
   DialogDescription,
   DialogFooter,
-  DialogClose,
+  //DialogClose,
 } from "./ui/dialog";
 import { useState } from "react";
 import { Label } from "./ui/label";
-import { Input } from "./ui/input";
+//import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { useWriteContract } from "wagmi";
 import abi from "../constants/SupplyChain.json";
@@ -20,7 +20,7 @@ import { config } from "../../config";
 
 // addProduct
 
-function Modal({ showModal, setShowModal, addProduct }: any) {
+function Modal({ showModal, setShowModal }: any) {
   const [newProduct, setNewProduct] = useState({
     name: "",
     serialNumber: "",
